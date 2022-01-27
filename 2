@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int room = 1;
+	char input;
+	do { //game loop
+		switch (room) {
+		case 1: // room 1!
+			cout << "You are in room: "<<room<<". You can go North, East, and West." << endl;
+			cin >> input;
+			if (input == 'n')
+				room = 2;
+			if (input == 'e')
+				room = 4;
+			if (input == 'w')
+				room = 3;
+			break;
+		case 2: // room 2!
+			cout << "You are in room: " << room << ". You can go South." << endl;
+			cin >> input;
+			if (input == 's')
+				room = 1;
+			break;
+		case 3: // room 3!
+			cout << "You are in room: " << room << ". You can go East." << endl;
+			cin >> input;
+			if (input == 'e')
+				room = 1;
+			break;
+		case 4: // room 4!
+			cout << "You are in room: " << room << ". You can go South and West." << endl;
+			cin >> input;
+			if (input == 's')
+				room = 5;
+			if (input == 'w')
+				room = 1;
+			break;
+		case 5: // room 5!
+			cout << "You are in room: " << room << ". You can go North." << endl;
+			cin >> input;
+			if (input == 'n')
+				room = 4;
+			break;
+		}
+	} while (input != 'q');
+}
